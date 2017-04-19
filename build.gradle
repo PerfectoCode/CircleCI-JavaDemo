@@ -1,0 +1,56 @@
+group 'com.perfecto'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+def seleniumVersion = "2.53.1"
+def testNGVersion = '6.9.10'
+def reportiumVersion = '1.1.10'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+    maven {
+        url "http://repository-perfectomobile.forge.cloudbees.com/public"
+    }
+    maven {
+        url "http://repo.jenkins-ci.org/releases/"
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile("com.perfecto.reporting-sdk:reportium-java:$reportiumVersion") {
+        exclude group: "org.seleniumhq.selenium", module: "selenium-remote-driver"
+        exclude group: "org.seleniumhq.selenium", module: "selenium-java"
+        exclude group: "org.seleniumhq.selenium", module: "selenium-api"
+    }
+
+    compile "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    compile "org.seleniumhq.selenium:selenium-api:$seleniumVersion"
+    compile group: 'org.testng', name: 'testng', version: testNGVersion
+}
+
+tasks.withType(Test) {
+    useTestNG {
+        testLogging.showStandardStreams = true
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4'
+}
+
+task DigitalZoomDemo(type: Test) {
+    systemProperties = System.properties
+
+    useTestNG {
+        println '======================================'
+        println '=    Running DigitalZoomDemo task    ='
+        println '======================================'
+        suites './src/test/resources/testng.xml'
+    }
+}

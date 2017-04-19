@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestList" parallel="tests">
+
+    <test name="Test Android">
+        <parameter name="platformName" value="Android" />
+        <parameter name="platformVersion" value="" />
+        <parameter name="browserName" value="" />
+        <parameter name="browserVersion" value="" />
+        <parameter name="screenResolution" value="" />
+        <parameter name="model" value="" />
+        <!--<parameter name="deviceName" value="" />-->
+        <classes>
+            <class name="RemoteWebDriverTest"/>
+        </classes>
+    </test>
+
+    <test name="Test iOS">
+        <parameter name="platformName" value="iOS" />
+        <parameter name="platformVersion" value="" />
+        <parameter name="browserName" value="" />
+        <parameter name="browserVersion" value="" />
+        <parameter name="screenResolution" value="" />
+        <parameter name="model" value="" />
+        <!--<parameter name="deviceName" value="" />-->
+        <classes>
+            <class name="RemoteWebDriverTest"/>
+        </classes>
+    </test>
+
+    <test name="Test Web">
+        <parameter name="platformName" value="Windows" />
+        <parameter name="platformVersion" value="10" />
+        <parameter name="browserName" value="Chrome" />
+        <parameter name="browserVersion" value="57" />
+        <parameter name="screenResolution" value="1280x1024" />
+        <parameter name="model" value="" />
+        <!--<parameter name="deviceName" value="" />-->
+        <classes>
+            <class name="RemoteWebDriverTest"/>
+        </classes>
+    </test>
+
+
+</suite>
