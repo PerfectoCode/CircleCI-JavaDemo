@@ -1,6 +1,6 @@
 # CircleCI-JavaDemo
 
-[![CircleCI](https://circleci.com/gh/PerfectoCode/CircleCI-JavaDemo.svg?style=svg)](https://circleci.com/gh/PerfectoCode/CircleCI-JavaDemo)
+[![CircleCI](https://circleci.com/gh/PerfectoCode/CircleCI-JavaDemo.svg?style=shield)](https://circleci.com/gh/PerfectoCode/CircleCI-JavaDemo)
 
 This project shows how to integrate CircleCI with your Perfecto lab on the cloud and getting tests report with Perfecto DigitalZoom Reporting.
 
